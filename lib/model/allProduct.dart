@@ -186,74 +186,163 @@ class AllProductsData {
 
   static List<Map<String, dynamic>>? listOfBoots = [
     {
-      "name": "Lotsa Shoes",
-      "price": 799,
+      "name": "BlackBerry",
+      "price": 1999,
       "description":
           "Enhance your fashion statement with the right casual shoes. They are designed to make you look fashionable so you can wear them at a family get-together or on an outing with friends",
-      "imagePath": "assets/slippers/lotsa shoes.jpg",
+      "imagePath": "assets/boots/blackberry.jpg",
     },
     {
-      "name": "CALIBREL",
-      "price": 1299,
-      "description":
-          "Enhance your fashion statement with the right casual shoes. They are designed to make you look fashionable so you can wear them at a family get-together or on an outing with friends",
-      "imagePath": "assets/slippers/frankie4.jpg",
-    },
-    {
-      "name": "BIRDE ",
+      "name": "MEN COFFEE BROWN ",
       "price": 2599,
       "description":
           "Enhance your fashion statement with the right casual shoes. They are designed to make you look fashionable so you can wear them at a family get-together or on an outing with friends",
-      "imagePath": "assets/slippers/hawkins.jpg",
+      "imagePath": "assets/boots/men coffee browm.jpg",
     },
     {
       "name": "Rockstar",
       "price": 2099,
       "description":
           "Enhance your fashion statement with the right casual shoes. They are designed to make you look fashionable so you can wear them at a family get-together or on an outing with friends",
-      "imagePath": "assets/slippers/rockstar.jpg",
+      "imagePath": "assets/boots/Amaroq-Valkyrie.jpg",
     },
     {
-      "name": "MediWalk",
-      "price": 999,
+      "name": "MenSlip",
+      "price": 2999,
       "description":
           "Enhance your fashion statement with the right casual shoes. They are designed to make you look fashionable so you can wear them at a family get-together or on an outing with friends",
-      "imagePath": "assets/slippers/slip2.jpg",
+      "imagePath": "assets/boots/menslip.jpg",
     },
     {
-      "name": " Classic ",
-      "price": 1649,
+      "name": " Red Tape casual",
+      "price": 2649,
       "description":
           "Enhance your fashion statement with the right casual shoes. They are designed to make you look fashionable so you can wear them at a family get-together or on an outing with friends",
-      "imagePath": "assets/slippers/slip5.jpg",
+      "imagePath": "assets/boots/red tape casual.jpg",
     },
     {
-      "name": "PUMA",
-      "price": 2599,
+      "name": "Synthetic leather",
+      "price": 3599,
       "description":
           "Enhance your fashion statement with the right casual shoes. They are designed to make you look fashionable so you can wear them at a family get-together or on an outing with friends",
-      "imagePath": "assets/slippers/puma.webp",
+      "imagePath": "assets/boots/synthetic leather.webp",
     },
     {
-      "name": "BERSACHE",
-      "price": 799,
+      "name": "Woodland Snaype",
+      "price": 5495,
       "description":
           "Enhance your fashion statement with the right casual Slippers. They are designed to make you look fashionable so you can wear them at a family get-together or on an outing with friends",
-      "imagePath": "assets/slippers/THONI.webp",
+      "imagePath": "assets/boots/WOODL.webp",
     },
     {
-      "name": "RED TAPE",
+      "name": "Bacca Bucci",
       "price": 2599,
       "description":
           "Enhance your fashion statement with the right casual shoes. They are designed to make you look fashionable so you can wear them at a family get-together or on an outing with friends",
-      "imagePath": "assets/slippers/ooo.webp",
+      "imagePath": "assets/boots/bacca bucci.webp",
     },
     {
-      "name": "Dr.Ortho",
+      "name": "Kraasa",
       "price": 1799,
       "description":
           "Enhance your fashion statement with the right casual Slippers. They are designed to make you look fashionable so you can wear them at a family get-together or on an outing with friends",
-      "imagePath": "assets/slippers/dr.webp",
+      "imagePath": "assets/boots/Kraasa.webp",
+    },
+    {
+      "name": "Pelle Santino",
+      "price": 1399,
+      "description":
+          "Enhance your fashion statement with the right casual Slippers. They are designed to make you look fashionable so you can wear them at a family get-together or on an outing with friends",
+      "imagePath": "assets/boots/Pelle Santino.webp",
+    },
+    {
+      "name": "Vellinto",
+      "price": 3499,
+      "description":
+          "Enhance your fashion statement with the right casual Slippers. They are designed to make you look fashionable so you can wear them at a family get-together or on an outing with friends",
+      "imagePath": "assets/boots/Vellinto.webp",
+    },
+    {
+      "name": "BACCKA",
+      "price": 5599,
+      "description":
+          "Enhance your fashion statement with the right casual Slippers. They are designed to make you look fashionable so you can wear them at a family get-together or on an outing with friends",
+      "imagePath": "assets/boots/bacca bucci01.webp",
+    },
+  ];
+
+  //WATCHES
+
+  static List<Map<String, dynamic>>? listofWateches = [
+    {
+      "name": "OUPINKE",
+      "price": 8990,
+      "description":
+          "This men's watch from OUPINKE features an automatic mechanical design which needs kinetic movement to retain its charge.It has a Tourbillon Skeleton design and a black dial with day and date windows.It also has a calendar function.The watch comes with the accessories needed to adjust the band, if needed.",
+      "imagePath": "assets/watches/oupinke.jpg",
+    },
+    {
+      "name": "BENYR",
+      "price": 2990,
+      "description":
+          "This men's watch from OUPINKE features an automatic mechanical design which needs kinetic movement to retain its charge.It has a Tourbillon Skeleton design and a black dial with day and date windows.It also has a calendar function.The watch comes with the accessories needed to adjust the band, if needed.",
+      "imagePath": "assets/watches/Benyr.jpg",
+    },
+    {
+      "name": "COBRA ANALOGUE",
+      "price": 10990,
+      "description":
+          "This men's watch from OUPINKE features an automatic mechanical design which needs kinetic movement to retain its charge.It has a Tourbillon Skeleton design and a black dial with day and date windows.It also has a calendar function.The watch comes with the accessories needed to adjust the band, if needed.",
+      "imagePath": "assets/watches/cobra analogue.jpg",
+    },
+    {
+      "name": "G-SHOCK",
+      "price": 1990,
+      "description":
+          "This men's watch from OUPINKE features an automatic mechanical design which needs kinetic movement to retain its charge.It has a Tourbillon Skeleton design and a black dial with day and date windows.It also has a calendar function.The watch comes with the accessories needed to adjust the band, if needed.",
+      "imagePath": "assets/watches/g.webp",
+    },
+    {
+      "name": "Sylvi Iconic",
+      "price": 8990,
+      "description":
+          "This men's watch from OUPINKE features an automatic mechanical design which needs kinetic movement to retain its charge.It has a Tourbillon Skeleton design and a black dial with day and date windows.It also has a calendar function.The watch comes with the accessories needed to adjust the band, if needed.",
+      "imagePath": "assets/watches/g2.jpg",
+    },
+    {
+      "name": "CASIO",
+      "price": 4990,
+      "description":
+          "This men's watch from OUPINKE features an automatic mechanical design which needs kinetic movement to retain its charge.It has a Tourbillon Skeleton design and a black dial with day and date windows.It also has a calendar function.The watch comes with the accessories needed to adjust the band, if needed.",
+      "imagePath": "assets/watches/CASIO.webp",
+    },
+    {
+      "name": "GOLDEN HOUR",
+      "price": 3990,
+      "description":
+          "This men's watch from OUPINKE features an automatic mechanical design which needs kinetic movement to retain its charge.It has a Tourbillon Skeleton design and a black dial with day and date windows.It also has a calendar function.The watch comes with the accessories needed to adjust the band, if needed.",
+      "imagePath": "assets/watches/Golden hour.jpg",
+    },
+    {
+      "name": "ILOZ",
+      "price": 10990,
+      "description":
+          "This men's watch from OUPINKE features an automatic mechanical design which needs kinetic movement to retain its charge.It has a Tourbillon Skeleton design and a black dial with day and date windows.It also has a calendar function.The watch comes with the accessories needed to adjust the band, if needed.",
+      "imagePath": "assets/watches/iloz.webp",
+    },
+    {
+      "name": "JACOB & CO.",
+      "price": 8990,
+      "description":
+          "This men's watch from OUPINKE features an automatic mechanical design which needs kinetic movement to retain its charge.It has a Tourbillon Skeleton design and a black dial with day and date windows.It also has a calendar function.The watch comes with the accessories needed to adjust the band, if needed.",
+      "imagePath": "assets/watches/s.webp",
+    },
+    {
+      "name": "SKYLONA",
+      "price": 5990,
+      "description":
+          "This men's watch from OUPINKE features an automatic mechanical design which needs kinetic movement to retain its charge.It has a Tourbillon Skeleton design and a black dial with day and date windows.It also has a calendar function.The watch comes with the accessories needed to adjust the band, if needed.",
+      "imagePath": "assets/watches/skylona.webp",
     },
   ];
 }

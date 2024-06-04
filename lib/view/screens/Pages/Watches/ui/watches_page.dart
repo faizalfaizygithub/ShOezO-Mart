@@ -1,21 +1,21 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:ui/view/screens/Pages/Boots/bloc/bloc/boots_bloc.dart';
-import 'package:ui/view/screens/Pages/Boots/ui/boots_tile.dart';
+import 'package:ui/view/screens/Pages/Watches/bloc/bloc/watches_bloc.dart';
+import 'package:ui/view/screens/Pages/Watches/ui/watches_tile.dart';
 
-class BootsPage extends StatefulWidget {
-  const BootsPage({super.key});
+class WatchesPage extends StatefulWidget {
+  const WatchesPage({super.key});
 
   @override
-  State<BootsPage> createState() => _BootsPageState();
+  State<WatchesPage> createState() => _WatchesPageState();
 }
 
-class _BootsPageState extends State<BootsPage> {
-  final BootsBloc bootsBloc = BootsBloc();
+class _WatchesPageState extends State<WatchesPage> {
+  final WatchesBloc watchesBloc = WatchesBloc();
 
   @override
   void initState() {
-    bootsBloc.add(BootsInitialEvent());
+    watchesBloc.add(WatchesInitialEvent());
     super.initState();
   }
 
@@ -23,41 +23,41 @@ class _BootsPageState extends State<BootsPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Boots Collections'),
+        title: const Text('Watch Collections'),
       ),
       body: Container(
           height: double.infinity,
           width: double.infinity,
-          padding: const EdgeInsets.all(10),
-          child: BlocConsumer<BootsBloc, BootsState>(
-            bloc: bootsBloc,
+          padding: EdgeInsets.all(10),
+          child: BlocConsumer<WatchesBloc, WatchesState>(
+            bloc: watchesBloc,
             listener: (context, state) {},
-            listenWhen: (previous, current) => current is BootsActionState,
-            buildWhen: (previous, current) => current is! BootsActionState,
+            listenWhen: (previous, current) => current is WatchesActionState,
+            buildWhen: (previous, current) => current is! WatchesActionState,
             builder: (context, state) {
               switch (state.runtimeType) {
-                case BootsLoadingState:
+                case WatchesLoadingState:
                   return const Center(
                     child: CircularProgressIndicator(),
                   );
 
-                case BootsSuccessLoadedState:
-                  final bootsData = state as BootsSuccessLoadedState;
+                case WatchesSuccessLoadedState:
+                  final watchData = state as WatchesSuccessLoadedState;
                   return GridView.builder(
-                      itemCount: bootsData.bootsCollections.length,
+                      itemCount: watchData.watchesCollections.length,
                       gridDelegate:
                           const SliverGridDelegateWithFixedCrossAxisCount(
                               crossAxisCount: 2, childAspectRatio: 0.6),
                       itemBuilder: (context, index) {
                         return Padding(
                           padding: const EdgeInsets.all(5.0),
-                          child: BootsCollectionTile(
-                              bootsBloc: bootsBloc,
+                          child: WatchesCollectionTile(
+                              watchesBloc: watchesBloc,
                               homeDisplayProductModel:
-                                  bootsData.bootsCollections[index]),
+                                  watchData.watchesCollections[index]),
                         );
                       });
-                case BootsErrorState:
+                case WatchesErrorState:
                   return const Center(child: Text('some error occurred'));
 
                 default:

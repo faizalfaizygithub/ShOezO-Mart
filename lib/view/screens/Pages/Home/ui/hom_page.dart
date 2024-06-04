@@ -1,9 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:get/get.dart';
+import 'package:ui/view/screens/Pages/Boots/ui/boots_page.dart';
 import 'package:ui/view/screens/Pages/Home/bloc/home_bloc.dart';
 import 'package:ui/view/screens/Pages/Shoes/ui/shoes_page.dart';
 import 'package:ui/view/screens/Pages/Slippers/UI/slipers_page.dart';
+import 'package:ui/view/screens/Pages/Watches/ui/watches_page.dart';
 import 'package:ui/view/tools/assets.dart';
 import 'package:ui/view/tools/carousel.dart';
 import 'package:ui/view/tools/my_product_tile.dart';
@@ -137,9 +139,13 @@ class _HomePageState extends State<HomePage> {
                   duration: const Duration(seconds: 2));
             }),
             gyap(),
-            categories('Boots', () {}),
+            categories('Boots', () {
+              Get.to(const BootsPage());
+            }),
             gyap(),
-            categories('Watches', () {}),
+            categories('Watches', () {
+              Get.to(const WatchesPage());
+            }),
             gyap(),
           ],
         ),

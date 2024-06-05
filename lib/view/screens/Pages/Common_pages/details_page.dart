@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:ui/model/productDataModel.dart';
+import 'package:ui/view/tools/favoriteicon.dart';
+import 'package:ui/view/tools/myTextStyle.dart';
 import 'package:ui/view/tools/my_button.dart';
 
 class DetailsPage extends StatefulWidget {
@@ -56,30 +58,17 @@ class _DetailsPageState extends State<DetailsPage> {
             ),
             ListTile(
                 title: Text(
-                  overflow: TextOverflow.ellipsis,
-                  widget.homeDisplayProductModel.name,
-                  style: const TextStyle(
-                      fontSize: 18,
-                      color: Colors.black87,
-                      fontWeight: FontWeight.w600),
-                ),
-                subtitle: Text(
-                  "₹${widget.homeDisplayProductModel.price}-/",
-                  style: const TextStyle(
-                      fontSize: 14,
-                      color: Color.fromARGB(255, 4, 10, 44),
-                      fontWeight: FontWeight.bold),
-                ),
-                trailing: const Icon(Icons.favorite_rounded)),
+                    overflow: TextOverflow.ellipsis,
+                    widget.homeDisplayProductModel.name,
+                    style: subheadingStyle),
+                subtitle: Text("₹${widget.homeDisplayProductModel.price}-/",
+                    style: mediumTextStyle),
+                trailing: HeartIcon()),
+            Divider(),
             Padding(
               padding: const EdgeInsets.all(15.0),
-              child: Text(
-                widget.homeDisplayProductModel.description,
-                style: const TextStyle(
-                  color: Colors.black54,
-                  fontSize: 12,
-                ),
-              ),
+              child: Text(widget.homeDisplayProductModel.description,
+                  style: smallTextStyle),
             ),
             const SizedBox(
               height: 30,

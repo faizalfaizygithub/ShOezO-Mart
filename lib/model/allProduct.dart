@@ -17,7 +17,7 @@ class AllProductsData {
       "imagePath": "assets/shoes/campus.webp",
     },
     {
-      "name": "OUPINKE",
+      "name": "Oupinke",
       "price": 8990,
       "description":
           "This men's watch from OUPINKE features an automatic mechanical design which needs kinetic movement to retain its charge.It has a Tourbillon Skeleton design and a black dial with day and date windows.It also has a calendar function.The watch comes with the accessories needed to adjust the band, if needed.",

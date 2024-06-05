@@ -8,6 +8,7 @@ import 'package:ui/view/screens/Pages/Slippers/UI/slipers_page.dart';
 import 'package:ui/view/screens/Pages/Watches/ui/watches_page.dart';
 import 'package:ui/view/tools/assets.dart';
 import 'package:ui/view/tools/carousel.dart';
+import 'package:ui/view/tools/myTextStyle.dart';
 import 'package:ui/view/tools/my_product_tile.dart';
 
 class HomePage extends StatefulWidget {
@@ -29,7 +30,7 @@ class _HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
     return SafeArea(
-      minimum: EdgeInsets.only(top: 40),
+      minimum: const EdgeInsets.only(top: 40),
       top: true,
       child: Scaffold(
         appBar: appBar(),
@@ -47,10 +48,7 @@ class _HomePageState extends State<HomePage> {
                 const SizedBox(
                   height: 20,
                 ),
-                const Text(
-                  'Categories',
-                  style: TextStyle(fontWeight: FontWeight.bold),
-                ),
+                Text('Categories', style: mediumTextStyle),
                 const SizedBox(
                   height: 13,
                 ),
@@ -61,17 +59,10 @@ class _HomePageState extends State<HomePage> {
                 Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
-                    const Text(
-                      'Most Popular',
-                      style: TextStyle(fontWeight: FontWeight.bold),
-                    ),
+                    Text('Most Popular', style: mediumTextStyle),
                     TextButton(
                       onPressed: () {},
-                      child: const Text(
-                        'See all >',
-                        style: TextStyle(
-                            fontSize: 10, fontWeight: FontWeight.bold),
-                      ),
+                      child: Text('See all >', style: smallTextStyle),
                     ),
                   ],
                 ),
@@ -159,7 +150,9 @@ class _HomePageState extends State<HomePage> {
 
   appBar() {
     return AppBar(
-      title: const Text('Shoezo'),
+      title: const Text(
+        'Shoezo',
+      ),
       actions: [
         IconButton(
           onPressed: () {},
@@ -181,15 +174,15 @@ class _HomePageState extends State<HomePage> {
           child: Padding(
             padding: const EdgeInsets.all(20.0),
             child: TextField(
-              style: TextStyle(fontSize: 12),
+              style: const TextStyle(fontSize: 12),
               cursorHeight: 20,
               decoration: InputDecoration(
                   fillColor: Colors.grey.shade400,
                   filled: true,
-                  prefixIcon: Icon(Icons.search),
+                  prefixIcon: const Icon(Icons.search),
                   hintText: 'Search your product?',
-                  hintStyle: TextStyle(color: Colors.black, fontSize: 10),
-                  contentPadding: EdgeInsets.all(4),
+                  hintStyle: smallTextStyle,
+                  contentPadding: const EdgeInsets.all(4),
                   enabledBorder: OutlineInputBorder(
                       borderRadius: BorderRadius.circular(15),
                       borderSide: BorderSide(color: Colors.grey.shade300)),
@@ -210,11 +203,7 @@ class _HomePageState extends State<HomePage> {
             border: Border.all(color: Colors.black54),
             borderRadius: BorderRadius.circular(10)),
         child: Center(
-          child: Text(
-            txt,
-            overflow: TextOverflow.fade,
-            style: const TextStyle(fontSize: 12, color: Colors.black87),
-          ),
+          child: Text(txt, overflow: TextOverflow.fade, style: smallTextStyle),
         ),
       ),
     );

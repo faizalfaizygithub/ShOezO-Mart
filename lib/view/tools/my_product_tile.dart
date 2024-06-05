@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:ui/model/productDataModel.dart';
 import 'package:ui/view/screens/Pages/Common_pages/details_page.dart';
+import 'package:ui/view/tools/myTextStyle.dart';
 
 class MyProductTile extends StatelessWidget {
   final DisplayProductModel homeDisplayProductModel;
@@ -45,11 +46,8 @@ class MyProductTile extends StatelessWidget {
                   ),
                 ))),
             //title
-            Text(
-              homeDisplayProductModel.name,
-              overflow: TextOverflow.ellipsis,
-              style: TextStyle(fontWeight: FontWeight.bold),
-            ),
+            Text(homeDisplayProductModel.name,
+                overflow: TextOverflow.ellipsis, style: mediumTextStyle),
             //amount
 
             Row(

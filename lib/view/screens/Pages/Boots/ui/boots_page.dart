@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:ui/view/screens/Pages/Boots/bloc/bloc/boots_bloc.dart';
-import 'package:ui/view/screens/Pages/Boots/ui/boots_tile.dart';
+import 'package:ui/view/tools/my_product_tile.dart';
 
 class BootsPage extends StatefulWidget {
   const BootsPage({super.key});
@@ -51,8 +51,7 @@ class _BootsPageState extends State<BootsPage> {
                       itemBuilder: (context, index) {
                         return Padding(
                           padding: const EdgeInsets.all(5.0),
-                          child: BootsCollectionTile(
-                              bootsBloc: bootsBloc,
+                          child: MyProductTile(
                               homeDisplayProductModel:
                                   bootsData.bootsCollections[index]),
                         );

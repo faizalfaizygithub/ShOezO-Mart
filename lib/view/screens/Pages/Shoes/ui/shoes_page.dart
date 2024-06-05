@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:ui/view/screens/Pages/Shoes/bloc/bloc/shoes_bloc.dart';
-import 'package:ui/view/screens/Pages/Shoes/ui/shoes_collection_tile.dart';
+import 'package:ui/view/tools/my_product_tile.dart';
 
 class ShoesPage extends StatefulWidget {
   const ShoesPage({super.key});
@@ -51,8 +51,7 @@ class _ShoesPageState extends State<ShoesPage> {
                       itemBuilder: (context, index) {
                         return Padding(
                           padding: const EdgeInsets.all(5.0),
-                          child: ShoesCollectionTile(
-                              shoesBloc: shoesBloc,
+                          child: MyProductTile(
                               homeDisplayProductModel:
                                   shoesData.shoesCollections[index]),
                         );

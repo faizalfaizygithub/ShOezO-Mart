@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:ui/view/screens/Pages/Watches/bloc/bloc/watches_bloc.dart';
-import 'package:ui/view/screens/Pages/Watches/ui/watches_tile.dart';
+import 'package:ui/view/tools/my_product_tile.dart';
 
 class WatchesPage extends StatefulWidget {
   const WatchesPage({super.key});
@@ -51,8 +51,8 @@ class _WatchesPageState extends State<WatchesPage> {
                       itemBuilder: (context, index) {
                         return Padding(
                           padding: const EdgeInsets.all(5.0),
-                          child: WatchesCollectionTile(
-                              watchesBloc: watchesBloc,
+                          child: MyProductTile(
+                              // watchesBloc: watchesBloc,
                               homeDisplayProductModel:
                                   watchData.watchesCollections[index]),
                         );

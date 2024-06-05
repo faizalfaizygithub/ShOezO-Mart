@@ -17,12 +17,13 @@ class MyApp extends StatelessWidget {
         title: 'Flutter Demo',
         theme: ThemeData(
           appBarTheme: const AppBarTheme(
-            backgroundColor: Colors.black,
+            backgroundColor: Colors.transparent,
             toolbarHeight: 80,
-            foregroundColor: Colors.white,
-            titleTextStyle: TextStyle(color: Colors.white),
+            foregroundColor: Colors.black,
+            titleTextStyle: TextStyle(
+                color: Colors.black, fontWeight: FontWeight.bold, fontSize: 18),
           ),
-          scaffoldBackgroundColor: Colors.grey.shade200,
+          scaffoldBackgroundColor: Colors.grey.shade300,
           useMaterial3: true,
         ),
         home: const MainPage());

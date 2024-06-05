@@ -14,7 +14,7 @@ class AllProductsData {
       "price": 2999,
       "description":
           "Enhance your fashion statement with the right casual shoes. They are designed to make you look fashionable so you can wear them at a family get-together or on an outing with friends",
-      "imagePath": "assets/shoes/8.jpg",
+      "imagePath": "assets/shoes/campus.webp",
     },
     {
       "name": "OUPINKE",
@@ -38,11 +38,11 @@ class AllProductsData {
       "imagePath": "assets/slippers/lotsa shoes.jpg",
     },
     {
-      "name": "574 Sneakers For Men",
+      "name": "Rapid Box",
       "price": 3799,
       "description":
           "Enhance your fashion statement with the right casual shoes. They are designed to make you look fashionable so you can wear them at a family get-together or on an outing with friends",
-      "imagePath": "assets/shoes/7.jpg",
+      "imagePath": "assets/shoes/Rapidbox.webp",
     },
   ];
 
@@ -50,11 +50,11 @@ class AllProductsData {
 
   static List<Map<String, dynamic>>? listOfShoes = [
     {
-      "name": "574 Sneakers For Men",
-      "price": 3799,
+      "name": "Jumpman MVP",
+      "price": 13799,
       "description":
           "Enhance your fashion statement with the right casual shoes. They are designed to make you look fashionable so you can wear them at a family get-together or on an outing with friends",
-      "imagePath": "assets/shoes/7.jpg",
+      "imagePath": "assets/shoes/nike.png",
     },
     {
       "name": "Lite Sports Running Shoes",
@@ -68,42 +68,42 @@ class AllProductsData {
       "price": 2599,
       "description":
           "Enhance your fashion statement with the right casual shoes. They are designed to make you look fashionable so you can wear them at a family get-together or on an outing with friends",
-      "imagePath": "assets/shoes/8.jpg",
+      "imagePath": "assets/shoes/redtape.webp",
     },
     {
       "name": "URBANBOX",
       "price": 4299,
       "description":
           "Enhance your fashion statement with the right casual shoes. They are designed to make you look fashionable so you can wear them at a family get-together or on an outing with friends",
-      "imagePath": "assets/shoes/2.jpg",
+      "imagePath": "assets/shoes/3.webp",
     },
     {
       "name": "CAMPUS",
       "price": 1199,
       "description":
           "Enhance your fashion statement with the right casual shoes. They are designed to make you look fashionable so you can wear them at a family get-together or on an outing with friends",
-      "imagePath": "assets/shoes/sho1.jpg",
+      "imagePath": "assets/shoes/campus.webp",
     },
     {
-      "name": " Sneakers",
+      "name": " Amico",
       "price": 3340,
       "description":
           "Enhance your fashion statement with the right casual shoes. They are designed to make you look fashionable so you can wear them at a family get-together or on an outing with friends",
-      "imagePath": "assets/shoes/6.jpg",
+      "imagePath": "assets/shoes/amico.webp",
     },
     {
-      "name": "BRUTON",
+      "name": "VINTAGE",
       "price": 3799,
       "description":
           "Enhance your fashion statement with the right casual shoes. They are designed to make you look fashionable so you can wear them at a family get-together or on an outing with friends",
-      "imagePath": "assets/shoes/3.jpg",
+      "imagePath": "assets/shoes/vintage.jpg",
     },
     {
       "name": "BIRDE",
       "price": 3799,
       "description":
           "Enhance your fashion statement with the right casual shoes. They are designed to make you look fashionable so you can wear them at a family get-together or on an outing with friends",
-      "imagePath": "assets/shoes/5.jpg",
+      "imagePath": "assets/shoes/1.jpg",
     },
   ];
 
@@ -282,7 +282,7 @@ class AllProductsData {
       "imagePath": "assets/watches/oupinke.jpg",
     },
     {
-      "name": "BENYR",
+      "name": "BENYAR",
       "price": 2990,
       "description":
           "This men's watch from OUPINKE features an automatic mechanical design which needs kinetic movement to retain its charge.It has a Tourbillon Skeleton design and a black dial with day and date windows.It also has a calendar function.The watch comes with the accessories needed to adjust the band, if needed.",

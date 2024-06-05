@@ -28,59 +28,63 @@ class _HomePageState extends State<HomePage> {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: appBar(),
-      body: Container(
-        height: double.infinity,
-        width: double.infinity,
-        padding: const EdgeInsets.all(15),
-        child: SingleChildScrollView(
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              CarouselScreen(
-                photos: bannerspic,
-              ),
-              const SizedBox(
-                height: 20,
-              ),
-              const Text(
-                'Categories',
-                style: TextStyle(fontWeight: FontWeight.bold),
-              ),
-              const SizedBox(
-                height: 13,
-              ),
-              allCategorySec(),
-              const SizedBox(
-                height: 20,
-              ),
-              Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: [
-                  const Text(
-                    'Most Popular',
-                    style: TextStyle(fontWeight: FontWeight.bold),
-                  ),
-                  TextButton(
-                    onPressed: () {},
-                    child: const Text(
-                      'See all >',
-                      style:
-                          TextStyle(fontSize: 10, fontWeight: FontWeight.bold),
+    return SafeArea(
+      minimum: EdgeInsets.only(top: 40),
+      top: true,
+      child: Scaffold(
+        appBar: appBar(),
+        body: Container(
+          height: double.infinity,
+          width: double.infinity,
+          padding: const EdgeInsets.all(15),
+          child: SingleChildScrollView(
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                CarouselScreen(
+                  photos: bannerspic,
+                ),
+                const SizedBox(
+                  height: 20,
+                ),
+                const Text(
+                  'Categories',
+                  style: TextStyle(fontWeight: FontWeight.bold),
+                ),
+                const SizedBox(
+                  height: 13,
+                ),
+                allCategorySec(),
+                const SizedBox(
+                  height: 20,
+                ),
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    const Text(
+                      'Most Popular',
+                      style: TextStyle(fontWeight: FontWeight.bold),
                     ),
-                  ),
-                ],
-              ),
-              const SizedBox(
-                height: 13,
-              ),
-              homeDisplayProductSec()
-            ],
+                    TextButton(
+                      onPressed: () {},
+                      child: const Text(
+                        'See all >',
+                        style: TextStyle(
+                            fontSize: 10, fontWeight: FontWeight.bold),
+                      ),
+                    ),
+                  ],
+                ),
+                const SizedBox(
+                  height: 13,
+                ),
+                homeDisplayProductSec()
+              ],
+            ),
           ),
         ),
+        drawer: const Drawer(),
       ),
-      drawer: const Drawer(),
     );
   }
 
@@ -108,7 +112,7 @@ class _HomePageState extends State<HomePage> {
                     padding: const EdgeInsets.all(5.0),
                     child: MyProductTile(
                       homeDisplayProductModel: data.displyProducts![index],
-                      homeBloc: homeBloc,
+                      // homeBloc: homeBloc,
                     ),
                   );
                 });
@@ -131,7 +135,7 @@ class _HomePageState extends State<HomePage> {
         child: Row(
           children: [
             categories('Shoes', () {
-              Get.to(const ShoesPage());
+              Get.to(const ShoesPage(), duration: const Duration(seconds: 2));
             }),
             gyap(),
             categories('Slippers', () {
@@ -140,11 +144,11 @@ class _HomePageState extends State<HomePage> {
             }),
             gyap(),
             categories('Boots', () {
-              Get.to(const BootsPage());
+              Get.to(const BootsPage(), duration: const Duration(seconds: 2));
             }),
             gyap(),
             categories('Watches', () {
-              Get.to(const WatchesPage());
+              Get.to(const WatchesPage(), duration: const Duration(seconds: 2));
             }),
             gyap(),
           ],
@@ -159,24 +163,38 @@ class _HomePageState extends State<HomePage> {
       actions: [
         IconButton(
           onPressed: () {},
-          icon: const Icon(Icons.shopping_cart_rounded),
+          icon: const Icon(
+            Icons.notifications_outlined,
+            size: 28,
+          ),
+        ),
+        IconButton(
+          onPressed: () {},
+          icon: const Icon(
+            Icons.shopping_cart_outlined,
+            size: 28,
+          ),
         ),
       ],
       bottom: PreferredSize(
           preferredSize: const Size(300, 50),
-          child: Container(
-            decoration: BoxDecoration(
-                color: Colors.white70, borderRadius: BorderRadius.circular(15)),
-            margin: const EdgeInsets.all(15),
-            child: const TextField(
+          child: Padding(
+            padding: const EdgeInsets.all(20.0),
+            child: TextField(
+              style: TextStyle(fontSize: 12),
               cursorHeight: 20,
               decoration: InputDecoration(
+                  fillColor: Colors.grey.shade400,
+                  filled: true,
                   prefixIcon: Icon(Icons.search),
                   hintText: 'Search your product?',
                   hintStyle: TextStyle(color: Colors.black, fontSize: 10),
-                  contentPadding: EdgeInsets.all(8),
-                  enabledBorder: OutlineInputBorder(),
-                  focusedBorder: OutlineInputBorder()),
+                  contentPadding: EdgeInsets.all(4),
+                  enabledBorder: OutlineInputBorder(
+                      borderRadius: BorderRadius.circular(15),
+                      borderSide: BorderSide(color: Colors.grey.shade300)),
+                  focusedBorder: OutlineInputBorder(
+                      borderRadius: BorderRadius.circular(15))),
             ),
           )),
     );

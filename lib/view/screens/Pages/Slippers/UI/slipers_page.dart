@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:ui/view/screens/Pages/Shoes/bloc/bloc/shoes_bloc.dart';
 import 'package:ui/view/screens/Pages/Slippers/Bloc/bloc/slippers_bloc.dart';
-import 'package:ui/view/screens/Pages/Slippers/UI/slippers_tile.dart';
+import 'package:ui/view/tools/my_product_tile.dart';
 
 class SlippersPage extends StatefulWidget {
   const SlippersPage({super.key});
@@ -52,8 +52,7 @@ class _SlippersPageState extends State<SlippersPage> {
                       itemBuilder: (context, index) {
                         return Padding(
                           padding: const EdgeInsets.all(5.0),
-                          child: SlippersCollectionTile(
-                              slippersBloc: slippersBloc,
+                          child: MyProductTile(
                               homeDisplayProductModel:
                                   slippersData.slippersCollections[index]),
                         );

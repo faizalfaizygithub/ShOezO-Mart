@@ -14,48 +14,52 @@ class MainPage extends StatefulWidget {
 class _MainPageState extends State<MainPage> {
   final List<Widget> pages = [
     const HomePage(),
-    CatogeryPage(),
-    CartPage(),
-    ProfilePage()
+    const CatogeryPage(),
+    const CartPage(),
+    const ProfilePage()
   ];
 
   int currentPage = 0;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      bottomNavigationBar: BottomNavigationBar(
-          type: BottomNavigationBarType.shifting,
-          selectedItemColor: Colors.black87,
-          unselectedItemColor: Colors.grey,
-          // selectedLabelStyle: subHeadingStyleBlue,
-          selectedFontSize: 17,
-          unselectedFontSize: 14,
-          currentIndex: currentPage,
-          onTap: (value) {
-            setState(() {
-              currentPage = value;
-            });
-          },
-          items: const [
-            BottomNavigationBarItem(
-              icon: Icon(
-                Icons.home,
+      bottomNavigationBar: Padding(
+        padding: const EdgeInsets.all(10.0),
+        child: BottomNavigationBar(
+            type: BottomNavigationBarType.shifting,
+            selectedItemColor: Colors.white70,
+            unselectedItemColor: Colors.grey.shade800,
+            // selectedLabelStyle: subHeadingStyleBlue,
+            selectedFontSize: 17,
+            unselectedFontSize: 14,
+            currentIndex: currentPage,
+            onTap: (value) {
+              setState(() {
+                currentPage = value;
+              });
+            },
+            items: const [
+              BottomNavigationBarItem(
+                backgroundColor: Colors.black,
+                icon: Icon(
+                  Icons.home,
+                ),
+                label: 'Home',
               ),
-              label: 'Home',
-            ),
-            BottomNavigationBarItem(
-              icon: Icon(Icons.category),
-              label: 'Categories',
-            ),
-            BottomNavigationBarItem(
-              icon: Icon(Icons.shopping_cart),
-              label: 'Cart',
-            ),
-            BottomNavigationBarItem(
-              icon: Icon(Icons.person),
-              label: 'Profile',
-            ),
-          ]),
+              BottomNavigationBarItem(
+                icon: Icon(Icons.category),
+                label: 'Categories',
+              ),
+              BottomNavigationBarItem(
+                icon: Icon(Icons.shopping_cart),
+                label: 'Cart',
+              ),
+              BottomNavigationBarItem(
+                icon: Icon(Icons.person),
+                label: 'Profile',
+              ),
+            ]),
+      ),
       body: pages[currentPage],
     );
   }

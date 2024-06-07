@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:get/get.dart';
 import 'package:ui/view/screens/Pages/Boots/ui/boots_page.dart';
 import 'package:ui/view/screens/Pages/Home/bloc/home_bloc.dart';
 import 'package:ui/view/screens/Pages/Shoes/ui/shoes_page.dart';
@@ -95,14 +94,14 @@ class _HomePageState extends State<HomePage> {
                 shrinkWrap: true,
                 physics: const BouncingScrollPhysics(),
                 controller: ScrollController(),
-                itemCount: data.displyProducts!.length,
+                itemCount: data.displayProducts!.length,
                 gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
                     childAspectRatio: 0.6, crossAxisCount: 2),
                 itemBuilder: (context, index) {
                   return Padding(
                     padding: const EdgeInsets.all(5.0),
                     child: MyProductTile(
-                      homeDisplayProductModel: data.displyProducts![index],
+                      homeDisplayProductModel: data.displayProducts![index],
                       // homeBloc: homeBloc,
                     ),
                   );
@@ -126,20 +125,36 @@ class _HomePageState extends State<HomePage> {
         child: Row(
           children: [
             categories('Shoes', () {
-              Get.to(const ShoesPage(), duration: const Duration(seconds: 2));
+              Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => const ShoesPage(),
+                  ));
+              // Get.to(const ShoesPage(), duration: const Duration(seconds: 2));
             }),
             gyap(),
             categories('Slippers', () {
-              Get.to(const SlippersPage(),
-                  duration: const Duration(seconds: 2));
+              Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => const SlippersPage(),
+                  ));
             }),
             gyap(),
             categories('Boots', () {
-              Get.to(const BootsPage(), duration: const Duration(seconds: 2));
+              Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => const BootsPage(),
+                  ));
             }),
             gyap(),
             categories('Watches', () {
-              Get.to(const WatchesPage(), duration: const Duration(seconds: 2));
+              Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => const WatchesPage(),
+                  ));
             }),
             gyap(),
           ],

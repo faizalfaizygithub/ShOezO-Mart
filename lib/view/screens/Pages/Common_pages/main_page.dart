@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:ui/view/screens/Pages/Cart/ui/cart_page.dart';
-import 'package:ui/view/screens/Pages/Category/ui/category_page.dart';
 import 'package:ui/view/screens/Pages/Common_pages/profile_page.dart';
+import 'package:ui/view/screens/Pages/Favorite/ui/favorite_page.dart';
 import 'package:ui/view/screens/Pages/Home/ui/hom_page.dart';
 
 class MainPage extends StatefulWidget {
@@ -14,7 +14,7 @@ class MainPage extends StatefulWidget {
 class _MainPageState extends State<MainPage> {
   final List<Widget> pages = [
     const HomePage(),
-    const CatogeryPage(),
+    const FavoritePage(),
     const CartPage(),
     const ProfilePage()
   ];
@@ -47,14 +47,17 @@ class _MainPageState extends State<MainPage> {
                 label: 'Home',
               ),
               BottomNavigationBarItem(
-                icon: Icon(Icons.category),
-                label: 'Categories',
+                backgroundColor: Colors.black,
+                icon: Icon(Icons.favorite_outlined),
+                label: 'WishList',
               ),
               BottomNavigationBarItem(
+                backgroundColor: Colors.black,
                 icon: Icon(Icons.shopping_cart),
                 label: 'Cart',
               ),
               BottomNavigationBarItem(
+                backgroundColor: Colors.black,
                 icon: Icon(Icons.person),
                 label: 'Profile',
               ),

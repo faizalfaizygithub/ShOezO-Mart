@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:ui/model/productDataModel.dart';
+import 'package:ui/view/screens/Pages/DetailsPage/bloc/details_bloc.dart';
 
 class HeartIcon extends StatefulWidget {
   const HeartIcon({super.key});
@@ -8,6 +10,8 @@ class HeartIcon extends StatefulWidget {
 }
 
 class _HeartIconState extends State<HeartIcon> with TickerProviderStateMixin {
+  final DetailsBloc detailsBloc = DetailsBloc();
+
   AnimationController? _controller;
   Animation<Color?>? _coloranimation;
   Animation<double?>? _sizeAnimation;
@@ -15,6 +19,7 @@ class _HeartIconState extends State<HeartIcon> with TickerProviderStateMixin {
 
   @override
   void initState() {
+    final DisplayProductModel displayProductModel;
     _controller = AnimationController(
         duration: const Duration(milliseconds: 500), vsync: this);
 
@@ -34,6 +39,9 @@ class _HeartIconState extends State<HeartIcon> with TickerProviderStateMixin {
         if (status == AnimationStatus.completed) {
           setState(() {
             isFav = true;
+            // detailsBloc.add(
+            //     FavoriteButtonClickedEvent(clickedProduct:displayProductModel)
+            // );
           });
         }
         if (status == AnimationStatus.dismissed) {

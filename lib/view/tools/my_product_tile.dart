@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:get/get.dart';
 import 'package:ui/model/productDataModel.dart';
-import 'package:ui/view/screens/Pages/Common_pages/details_page.dart';
+import 'package:ui/view/screens/Pages/DetailsPage/ui/details_Screen.dart';
 import 'package:ui/view/tools/myTextStyle.dart';
 
 class MyProductTile extends StatelessWidget {
@@ -12,7 +11,11 @@ class MyProductTile extends StatelessWidget {
   Widget build(BuildContext context) {
     return InkWell(
       onTap: () {
-        Get.to(DetailsPage(homeDisplayProductModel: homeDisplayProductModel));
+        Navigator.push(
+            context,
+            MaterialPageRoute(
+                builder: (context) => DetailsPages(
+                    homeDisplayProductModel: homeDisplayProductModel)));
       },
       child: Container(
         padding: const EdgeInsets.all(10),
@@ -35,16 +38,13 @@ class MyProductTile extends StatelessWidget {
             //photo
             AspectRatio(
                 aspectRatio: 0.8,
-                child: Container(
-                    // decoration:
-                    //     BoxDecoration(borderRadius: BorderRadius.circular(15)),
-                    child: ClipRRect(
+                child: ClipRRect(
                   borderRadius: BorderRadius.circular(15),
                   child: Image.asset(
                     homeDisplayProductModel.imagePath,
                     fit: BoxFit.cover,
                   ),
-                ))),
+                )),
             //title
             Text(homeDisplayProductModel.name,
                 overflow: TextOverflow.ellipsis, style: mediumTextStyle),

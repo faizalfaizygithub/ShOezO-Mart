@@ -26,3 +26,9 @@ TextStyle get mediumTextStyle {
       textStyle: const TextStyle(
           fontSize: 14, fontWeight: FontWeight.bold, color: Colors.black87));
 }
+
+TextStyle get smallWhiteTextStyle {
+  return GoogleFonts.lato(
+      textStyle: const TextStyle(
+          fontSize: 12, fontWeight: FontWeight.w500, color: Colors.white70));
+}

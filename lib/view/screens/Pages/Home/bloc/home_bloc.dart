@@ -17,7 +17,7 @@ class HomeBloc extends Bloc<HomeEvent, HomeState> {
       HomeInitialEvent event, Emitter<HomeState> emit) async {
     emit(
       HomeSuccessLoadedState(
-          displyProducts: AllProductsData.listOfHomeProducts!
+          displayProducts: AllProductsData.listOfHomeProducts!
               .map(
                 (e) => DisplayProductModel(
                     name: e["name"],

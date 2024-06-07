@@ -1,22 +1,23 @@
 import 'package:flutter/material.dart';
 import 'package:ui/model/productDataModel.dart';
-import 'package:ui/view/tools/favoriteicon.dart';
+import 'package:ui/view/screens/Pages/DetailsPage/bloc/details_bloc.dart';
 import 'package:ui/view/tools/myTextStyle.dart';
 import 'package:ui/view/tools/my_button.dart';
 
-class DetailsPage extends StatefulWidget {
+class DetailsPages extends StatefulWidget {
   final DisplayProductModel homeDisplayProductModel;
 
-  const DetailsPage({
+  const DetailsPages({
     super.key,
     required this.homeDisplayProductModel,
   });
 
   @override
-  State<DetailsPage> createState() => _DetailsPageState();
+  State<DetailsPages> createState() => _DetailsPageState();
 }
 
-class _DetailsPageState extends State<DetailsPage> {
+class _DetailsPageState extends State<DetailsPages> {
+  final DetailsBloc detailsBloc = DetailsBloc();
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -63,7 +64,12 @@ class _DetailsPageState extends State<DetailsPage> {
                     style: subheadingStyle),
                 subtitle: Text("₹${widget.homeDisplayProductModel.price}-/",
                     style: mediumTextStyle),
-                trailing: HeartIcon()),
+                trailing: IconButton(
+                    onPressed: () {
+                      detailsBloc.add(FavoriteButtonClickedEvent(
+                          clickedProduct: widget.homeDisplayProductModel));
+                    },
+                    icon: Icon(Icons.favorite_outline))),
             Divider(),
             Padding(
               padding: const EdgeInsets.all(15.0),
@@ -73,18 +79,23 @@ class _DetailsPageState extends State<DetailsPage> {
             const SizedBox(
               height: 30,
             ),
-            const Row(
+            Row(
               mainAxisAlignment: MainAxisAlignment.spaceAround,
               children: [
                 MyButton(
                   buttonName: 'Added to Cart',
                   buttonColor: Colors.white,
                   buttonTextColor: Colors.black87,
+                  ontap: () {
+                    myPopup();
+                  },
                 ),
                 MyButton(
-                    buttonName: 'Order Now',
-                    buttonColor: Colors.black87,
-                    buttonTextColor: Colors.white),
+                  buttonName: 'Order Now',
+                  buttonColor: Colors.black87,
+                  buttonTextColor: Colors.white,
+                  ontap: () {},
+                ),
               ],
             ),
             const SizedBox(
@@ -94,5 +105,46 @@ class _DetailsPageState extends State<DetailsPage> {
         ),
       ),
     );
+  }
+
+  myPopup() {
+    return showDialog(
+        context: context,
+        builder: (context) {
+          return AlertDialog(
+            content: Text(
+              'Are you sure want to Add this item to Cart?',
+              style: smallTextStyle,
+            ),
+            actions: [
+              MaterialButton(
+                onPressed: () {
+                  Navigator.pop(context);
+                },
+                child: Text(
+                  'No',
+                  style: subheadingStyle,
+                ),
+              ),
+              MaterialButton(
+                onPressed: () {
+                  detailsBloc.add(CartButtonClickedEvent(
+                      clickedProduct: widget.homeDisplayProductModel));
+                  Navigator.pop(context);
+                  ScaffoldMessenger.of(context).showSnackBar(SnackBar(
+                      backgroundColor: Colors.indigo,
+                      content: Text(
+                        'item added to the cart succesfully',
+                        style: smallWhiteTextStyle,
+                      )));
+                },
+                child: Text(
+                  'Yes',
+                  style: subheadingStyle,
+                ),
+              ),
+            ],
+          );
+        });
   }
 }

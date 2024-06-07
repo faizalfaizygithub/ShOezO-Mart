@@ -46,7 +46,7 @@ class AllProductsData {
     },
   ];
 
-  //for shoes collection
+  // for shoes collection
 
   static List<Map<String, dynamic>>? listOfShoes = [
     {
@@ -57,7 +57,7 @@ class AllProductsData {
       "imagePath": "assets/shoes/nike.png",
     },
     {
-      "name": "Lite Sports Running Shoes",
+      "name": "Lite Sports",
       "price": 1799,
       "description":
           "Enhance your fashion statement with the right casual shoes. They are designed to make you look fashionable so you can wear them at a family get-together or on an outing with friends",
@@ -193,7 +193,7 @@ class AllProductsData {
       "imagePath": "assets/boots/blackberry.jpg",
     },
     {
-      "name": "MEN COFFEE BROWN ",
+      "name": "Men Coffee Brown Boots",
       "price": 2599,
       "description":
           "Enhance your fashion statement with the right casual shoes. They are designed to make you look fashionable so you can wear them at a family get-together or on an outing with friends",

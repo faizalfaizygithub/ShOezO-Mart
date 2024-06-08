@@ -17,6 +17,7 @@ class DetailsBloc extends Bloc<DetailsEvent, DetailsState> {
     on<CartButtonClickedEvent>(cartButtonClickedEvent);
     on<FavoriteButtonNavigateEvent>(favoriteButtonNavigateEvent);
     on<CartButtonNavigateEvent>(cartButtonNavigateEvent);
+    on<FavoriteButtonClickedRemoveEvent>(favoriteButtonClickedRemoveEvent);
   }
 
   FutureOr<void> detailsInitialEvent(
@@ -44,5 +45,11 @@ class DetailsBloc extends Bloc<DetailsEvent, DetailsState> {
   FutureOr<void> cartButtonNavigateEvent(
       CartButtonNavigateEvent event, Emitter<DetailsState> emit) {
     emit(NavigateToCartPageActionState());
+  }
+
+  FutureOr<void> favoriteButtonClickedRemoveEvent(
+      FavoriteButtonClickedRemoveEvent event, Emitter<DetailsState> emit) {
+    wishListItems.remove(event.clickedProduct);
+    emit(ProductItemWishlistedActionState());
   }
 }

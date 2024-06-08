@@ -3,7 +3,8 @@ import 'package:ui/model/productDataModel.dart';
 import 'package:ui/view/screens/Pages/DetailsPage/bloc/details_bloc.dart';
 
 class HeartIcon extends StatefulWidget {
-  const HeartIcon({super.key});
+  final DisplayProductModel displayProductModel;
+  const HeartIcon({super.key, required this.displayProductModel});
 
   @override
   State<HeartIcon> createState() => _HeartIconState();
@@ -19,7 +20,6 @@ class _HeartIconState extends State<HeartIcon> with TickerProviderStateMixin {
 
   @override
   void initState() {
-    final DisplayProductModel displayProductModel;
     _controller = AnimationController(
         duration: const Duration(milliseconds: 500), vsync: this);
 
@@ -39,9 +39,6 @@ class _HeartIconState extends State<HeartIcon> with TickerProviderStateMixin {
         if (status == AnimationStatus.completed) {
           setState(() {
             isFav = true;
-            // detailsBloc.add(
-            //     FavoriteButtonClickedEvent(clickedProduct:displayProductModel)
-            // );
           });
         }
         if (status == AnimationStatus.dismissed) {
@@ -63,7 +60,14 @@ class _HeartIconState extends State<HeartIcon> with TickerProviderStateMixin {
         builder: (context, child) {
           return IconButton(
             onPressed: () {
-              isFav ? _controller!.reverse() : _controller!.forward();
+              setState(() {
+                isFav ? _controller!.reverse() : _controller!.forward();
+                isFav
+                    ? detailsBloc.add(FavoriteButtonClickedRemoveEvent(
+                        clickedProduct: widget.displayProductModel))
+                    : detailsBloc.add(FavoriteButtonClickedEvent(
+                        clickedProduct: widget.displayProductModel));
+              });
             },
             icon: Icon(
               Icons.favorite,

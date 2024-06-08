@@ -12,6 +12,13 @@ class FavoriteButtonClickedEvent extends DetailsEvent {
   });
 }
 
+class FavoriteButtonClickedRemoveEvent extends DetailsEvent {
+  final DisplayProductModel clickedProduct;
+  FavoriteButtonClickedRemoveEvent({
+    required this.clickedProduct,
+  });
+}
+
 class CartButtonClickedEvent extends DetailsEvent {
   final DisplayProductModel? clickedProduct;
   CartButtonClickedEvent({

@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:ui/model/productDataModel.dart';
 import 'package:ui/view/screens/Pages/DetailsPage/bloc/details_bloc.dart';
+import 'package:ui/view/screens/Pages/Favorite/bloc/bloc/favorite_bloc.dart';
+import 'package:ui/view/tools/favoriteicon.dart';
 import 'package:ui/view/tools/myTextStyle.dart';
 import 'package:ui/view/tools/my_button.dart';
 
@@ -17,7 +19,9 @@ class DetailsPages extends StatefulWidget {
 }
 
 class _DetailsPageState extends State<DetailsPages> {
+  bool isFav = true;
   final DetailsBloc detailsBloc = DetailsBloc();
+  final FavoriteBloc favoriteBloc = FavoriteBloc();
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -48,7 +52,7 @@ class _DetailsPageState extends State<DetailsPages> {
                 ),
                 child: Image.asset(
                   height: 400,
-                  "${widget.homeDisplayProductModel.imagePath}",
+                  widget.homeDisplayProductModel.imagePath,
                   fit: BoxFit.cover,
                   alignment: Alignment.topCenter,
                 ),
@@ -58,18 +62,15 @@ class _DetailsPageState extends State<DetailsPages> {
               height: 20,
             ),
             ListTile(
-                title: Text(
-                    overflow: TextOverflow.ellipsis,
-                    widget.homeDisplayProductModel.name,
-                    style: subheadingStyle),
-                subtitle: Text("₹${widget.homeDisplayProductModel.price}-/",
-                    style: mediumTextStyle),
-                trailing: IconButton(
-                    onPressed: () {
-                      detailsBloc.add(FavoriteButtonClickedEvent(
-                          clickedProduct: widget.homeDisplayProductModel));
-                    },
-                    icon: Icon(Icons.favorite_outline))),
+              title: Text(
+                  overflow: TextOverflow.ellipsis,
+                  widget.homeDisplayProductModel.name,
+                  style: subheadingStyle),
+              subtitle: Text("₹${widget.homeDisplayProductModel.price}-/",
+                  style: mediumTextStyle),
+              trailing: HeartIcon(
+                  displayProductModel: widget.homeDisplayProductModel),
+            ),
             Divider(),
             Padding(
               padding: const EdgeInsets.all(15.0),

@@ -59,7 +59,7 @@ class _MainPageState extends State<MainPage> {
               BottomNavigationBarItem(
                 backgroundColor: Colors.black,
                 icon: Icon(Icons.person),
-                label: 'Profile',
+                label: 'Account',
               ),
             ]),
       ),

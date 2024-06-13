@@ -18,16 +18,7 @@ class ShoesBloc extends Bloc<ShoesEvent, ShoesState> {
     emit(ShoesLoadingState());
     await Future.delayed(Duration(seconds: 3));
     emit(
-      ShoesSuccessLoadedState(
-          shoesCollections: AllProductsData.listOfShoes!
-              .map(
-                (e) => DisplayProductModel(
-                    name: e["name"],
-                    description: e["description"],
-                    price: e["price"],
-                    imagePath: e["imagePath"]),
-              )
-              .toList()),
+      ShoesSuccessLoadedState(shoesCollections: AllProductsData.listOfShoes!),
     );
   }
 }

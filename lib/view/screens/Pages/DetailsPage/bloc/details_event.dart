@@ -7,6 +7,7 @@ class DetailsInitialEvent extends DetailsEvent {}
 
 class FavoriteButtonClickedEvent extends DetailsEvent {
   final DisplayProductModel clickedProduct;
+
   FavoriteButtonClickedEvent({
     required this.clickedProduct,
   });

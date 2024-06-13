@@ -20,7 +20,7 @@ class MyButton extends StatelessWidget {
           height: 49,
           width: 150,
           decoration: BoxDecoration(
-            boxShadow: [
+            boxShadow: const [
               BoxShadow(
                   color: Colors.black26,
                   offset: Offset(1, 1),

@@ -15,17 +15,7 @@ class HomeBloc extends Bloc<HomeEvent, HomeState> {
 
   FutureOr<void> homeInitialEvent(
       HomeInitialEvent event, Emitter<HomeState> emit) async {
-    emit(
-      HomeSuccessLoadedState(
-          displayProducts: AllProductsData.listOfHomeProducts!
-              .map(
-                (e) => DisplayProductModel(
-                    name: e["name"],
-                    description: e["description"],
-                    price: e["price"],
-                    imagePath: e["imagePath"]),
-              )
-              .toList()),
-    );
+    emit(HomeSuccessLoadedState(
+        displayProducts: AllProductsData.listOfHomeProducts));
   }
 }

@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:ui/view/screens/Pages/Boots/ui/boots_page.dart';
+import 'package:ui/view/screens/Pages/Cart/ui/cart_page.dart';
 import 'package:ui/view/screens/Pages/Home/bloc/home_bloc.dart';
 import 'package:ui/view/screens/Pages/Shoes/ui/shoes_page.dart';
 import 'package:ui/view/screens/Pages/Slippers/UI/slipers_page.dart';
@@ -177,7 +178,10 @@ class _HomePageState extends State<HomePage> {
           ),
         ),
         IconButton(
-          onPressed: () {},
+          onPressed: () {
+            Navigator.push(context,
+                MaterialPageRoute(builder: (context) => const CartPage()));
+          },
           icon: const Icon(
             Icons.shopping_cart_outlined,
             size: 28,

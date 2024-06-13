@@ -30,5 +30,5 @@ TextStyle get mediumTextStyle {
 TextStyle get smallWhiteTextStyle {
   return GoogleFonts.lato(
       textStyle: const TextStyle(
-          fontSize: 12, fontWeight: FontWeight.w500, color: Colors.white70));
+          fontSize: 12, fontWeight: FontWeight.w600, color: Colors.white70));
 }

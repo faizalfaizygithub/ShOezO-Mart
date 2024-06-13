@@ -17,17 +17,7 @@ class SlippersBloc extends Bloc<SlippersEvent, SlippersState> {
       SlippersInitialEvent event, Emitter<SlippersState> emit) async {
     emit(SlippersLoadingState());
     await Future.delayed(Duration(seconds: 3));
-    emit(
-      SlippersSuccessLoadedState(
-          slippersCollections: AllProductsData.listOfSlippers!
-              .map(
-                (e) => DisplayProductModel(
-                    name: e["name"],
-                    description: e["description"],
-                    price: e["price"],
-                    imagePath: e["imagePath"]),
-              )
-              .toList()),
-    );
+    emit(SlippersSuccessLoadedState(
+        slippersCollections: AllProductsData.listOfSlippers!));
   }
 }
